@@ -1,0 +1,873 @@
+https://steamcommunity.com:3092, www.steamcommunity.com:3092 {
+#tls self_signed
+tls steamcommunity.crt steamcommunity.key
+    # default/catchall
+    proxy / https://steamuserimages-a.akamaihd.net https://steamstore-a.akamaihd.net https://steamcommunity-a.akamaihd.net https://eaassets-a.akamaihd.net https://humblebundle-a.akamaihd.net https://steamcommunity-a.akamaihd.net {
+    policy random
+    fail_timeout 5s
+    timeout 30s
+    transparent
+    header_upstream Host steamcommunity.com
+    #insecure_skip_verify
+    }
+}
+
+#http://:{8port0} {
+#redir / https://{host}{uri} 302
+#}
+
+
+https://store.steampowered.com:3092 {
+#tls self_signed
+tls steamcommunity.crt steamcommunity.key
+    # default/catchall
+    proxy / https://steamuserimages-a.akamaihd.net https://steamstore-a.akamaihd.net https://steamcommunity-a.akamaihd.net https://eaassets-a.akamaihd.net https://humblebundle-a.akamaihd.net https://steamcommunity-a.akamaihd.net {
+    policy random
+    fail_timeout 5s
+    timeout 30s
+    transparent
+    header_upstream Host store.steampowered.com
+    #insecure_skip_verify
+    }
+}
+
+https://api.steampowered.com:3092 {
+#tls self_signed
+tls steamcommunity.crt steamcommunity.key
+    # default/catchall
+    proxy / https://steamuserimages-a.akamaihd.net https://steamstore-a.akamaihd.net https://steamcommunity-a.akamaihd.net https://eaassets-a.akamaihd.net https://humblebundle-a.akamaihd.net https://steamcommunity-a.akamaihd.net {
+    policy random
+    fail_timeout 5s
+    timeout 30s
+    transparent
+    header_upstream Host api.steampowered.com
+    #insecure_skip_verify
+    }
+}
+
+https://discordapp.com:3092 {
+tls steamcommunity.crt steamcommunity.key {
+    protocols tls1.0 tls1.2
+    ciphers ECDHE-ECDSA-AES256-GCM-SHA384 ECDHE-RSA-AES256-GCM-SHA384 ECDHE-ECDSA-AES128-GCM-SHA256 ECDHE-RSA-AES128-GCM-SHA256 ECDHE-ECDSA-WITH-CHACHA20-POLY1305 ECDHE-RSA-WITH-CHACHA20-POLY1305 ECDHE-RSA-AES256-CBC-SHA ECDHE-RSA-AES128-CBC-SHA ECDHE-ECDSA-AES256-CBC-SHA ECDHE-ECDSA-AES128-CBC-SHA RSA-AES256-CBC-SHA RSA-AES128-CBC-SHA ECDHE-RSA-3DES-EDE-CBC-SHA RSA-3DES-EDE-CBC-SHA
+}
+    proxy / https://162.159.129.233 https://162.159.135.233 https://162.159.130.233 https://162.159.133.233 https://162.159.134.233 {
+    transparent
+    header_upstream Host discordapp.com
+    insecure_skip_verify
+    }
+}
+
+
+
+https://discord.com:3092 {
+tls steamcommunity.crt steamcommunity.key {
+    protocols tls1.0 tls1.2
+    ciphers ECDHE-ECDSA-AES256-GCM-SHA384 ECDHE-RSA-AES256-GCM-SHA384 ECDHE-ECDSA-AES128-GCM-SHA256 ECDHE-RSA-AES128-GCM-SHA256 ECDHE-ECDSA-WITH-CHACHA20-POLY1305 ECDHE-RSA-WITH-CHACHA20-POLY1305 ECDHE-RSA-AES256-CBC-SHA ECDHE-RSA-AES128-CBC-SHA ECDHE-ECDSA-AES256-CBC-SHA ECDHE-ECDSA-AES128-CBC-SHA RSA-AES256-CBC-SHA RSA-AES128-CBC-SHA ECDHE-RSA-3DES-EDE-CBC-SHA RSA-3DES-EDE-CBC-SHA
+}
+    proxy /assets https://dldsassets.steam302.xyz {
+    transparent
+    header_upstream Host dldsassets.steam302.xyz
+    insecure_skip_verify
+    }
+	
+    proxy / https://162.159.138.232 https://162.159.135.232 https://162.159.137.232 https://162.159.128.233 https://162.159.136.232 {
+    transparent
+    header_upstream Host discord.com
+    insecure_skip_verify
+    }
+}
+
+https://dl.discordapp.net:3092 {
+tls steamcommunity.crt steamcommunity.key {
+    protocols tls1.0 tls1.2
+    ciphers ECDHE-ECDSA-AES256-GCM-SHA384 ECDHE-RSA-AES256-GCM-SHA384 ECDHE-ECDSA-AES128-GCM-SHA256 ECDHE-RSA-AES128-GCM-SHA256 ECDHE-ECDSA-WITH-CHACHA20-POLY1305 ECDHE-RSA-WITH-CHACHA20-POLY1305 ECDHE-RSA-AES256-CBC-SHA ECDHE-RSA-AES128-CBC-SHA ECDHE-ECDSA-AES256-CBC-SHA ECDHE-ECDSA-AES128-CBC-SHA RSA-AES256-CBC-SHA RSA-AES128-CBC-SHA ECDHE-RSA-3DES-EDE-CBC-SHA RSA-3DES-EDE-CBC-SHA
+}
+    proxy / https://dlds.steam302.xyz/ {
+    transparent
+    header_upstream Host dlds.steam302.xyz
+    #insecure_skip_verify
+    }
+}
+
+#https://blog.discord.com:3092 {
+#tls steamcommunity.crt steamcommunity.key
+#    proxy / https://blgds.steam302.xyz {
+#    transparent
+#    header_upstream Host blgds.steam302.xyz
+#    insecure_skip_verify
+#    }
+#}
+
+#https://medium.com:3092 {
+#tls steamcommunity.crt steamcommunity.key
+#    proxy / https://memds.steam302.xyz {
+#    transparent
+#    header_upstream Host memds.steam302.xyz
+#    insecure_skip_verify
+#    }
+#}
+
+
+#https://gateway.discord.gg:3092 {
+#tls steamcommunity.crt steamcommunity.key
+#    proxy / https://gateway.discord.gg {
+#    transparent
+#    header_upstream Host {host}
+#    insecure_skip_verify
+#    }
+#}
+
+
+https://media.discordapp.net:3092 {
+tls steamcommunity.crt steamcommunity.key
+    proxy / https://162.159.133.232 https://162.159.134.232 https://162.159.129.232 https://162.159.130.232 https://162.159.128.232 {
+    transparent
+    header_upstream Host {host}
+    insecure_skip_verify
+    }
+}
+
+https://images-ext-2.discordapp.net:3092 {
+tls steamcommunity.crt steamcommunity.key
+redir / https://media.discordapp.net{uri} 302
+}
+
+https://images-ext-1.discordapp.net:3092 {
+tls steamcommunity.crt steamcommunity.key
+redir / https://media.discordapp.net{uri} 302
+}
+
+#https://discordcdn.com:3092 {
+#tls steamcommunity.crt steamcommunity.key
+#    proxy / https://162.159.138.233 https://162.159.128.234 https://162.159.137.233 https://162.159.129.234 https://162.159.136.233 {
+#    transparent
+#    header_upstream Host {host}
+#    #insecure_skip_verify
+#    }
+#}
+
+#https://support.discordapp.com:3092 https://support.discord.com:3092 https://safety.discord.com:3092 https://support-dev.discord.com:3092 {
+#tls steamcommunity.crt steamcommunity.key
+#    proxy / https://104.16.53.111 https://104.16.51.111 {
+#    transparent
+#    header_upstream Host {host}
+#    insecure_skip_verify
+#    }
+#}
+
+https://support.discord.com:3092 {
+tls steamcommunity.crt steamcommunity.key
+    proxy / https://supportds.steam302.xyz {
+    transparent
+    header_upstream Host supportds.steam302.xyz
+    insecure_skip_verify
+    }
+}
+
+https://safety.discord.com:3092 {
+tls steamcommunity.crt steamcommunity.key
+    proxy / https://safetyds.steam302.xyz {
+    transparent
+    header_upstream Host supportds.steam302.xyz
+    insecure_skip_verify
+    }
+}
+
+https://support-dev.discord.com:3092 {
+tls steamcommunity.crt steamcommunity.key
+    proxy / https://support-devds.steam302.xyz {
+    transparent
+    header_upstream Host support-devds.steam302.xyz
+    insecure_skip_verify
+    }
+}
+
+https://status.discord.com:3092 https://streamkit.discord.com:3092 https://feedback.discord.com:3092 https://click.discord.com:3092 https://pax.discord.com:3092 https://printer.discord.com:3092 https://ptb.discord.com:3092 https://canary.discord.com:3092 https://bugs.discord.com:3092 https://i18n.discord.com:3092 {
+tls steamcommunity.crt steamcommunity.key
+    proxy / https://162.159.135.232 https://162.159.136.232 https://162.159.137.232 https://162.159.138.232 https://162.159.128.233 {
+    transparent
+    header_upstream Host {host}
+    insecure_skip_verify
+    }
+}
+
+
+https://url9177.discordapp.com:3092 https://canary-api.discordapp.com:3092 https://cdn-ptb.discordapp.com:3092 https://ptb.discordapp.com:3092 https://status.discordapp.com:3092 https://cdn-canary.discordapp.com:3092 https://cdn.discordapp.com:3092 https://streamkit.discordapp.com:3092 https://i18n.discordapp.com:3092 https://url9624.discordapp.com:3092 https://url7195.discordapp.com:3092 https://merch.discordapp.com:3092 https://printer.discordapp.com:3092 https://canary.discordapp.com:3092 https://apps.discordapp.com:3092 https://pax.discordapp.com:3092 {
+tls steamcommunity.crt steamcommunity.key
+    proxy / https://162.159.133.233 https://162.159.129.233 https://162.159.130.233 https://162.159.134.233 https://162.159.135.233 {
+    transparent
+    header_upstream Host {host}
+    insecure_skip_verify
+    }
+}
+
+https://twitch.tv:3092 https://www.twitch.tv:3092 https://m.twitch.tv:3092 https://app.twitch.tv:3092 https://clips.twitch.tv:3092 https://gql.twitch.tv:3092 https://dashboard.twitch.tv:3092 {
+tls steamcommunity.crt steamcommunity.key
+    proxy / https://twitch.map.fastly.net {
+    transparent
+    header_upstream Host {host}
+    insecure_skip_verify
+    }
+}
+
+https://irc-ws.chat.twitch.tv:3092 {
+tls steamcommunity.crt steamcommunity.key
+    proxy / https://5a895ed07aed1b254ee21cd78958ae0b.steam302.xyz {
+    websocket
+    transparent
+    header_upstream Connection Upgrade
+    header_upstream Upgrade websocket
+    header_upstream Host irc-ws.chat.twitch.tv
+    insecure_skip_verify
+    }
+}
+
+https://irc-ws-r.chat.twitch.tv:3092 {
+tls steamcommunity.crt steamcommunity.key
+    proxy / https://065f67277ae87878fffaa60519b3ee5c.steam302.xyz {
+    websocket
+    transparent
+    header_upstream Connection Upgrade
+    header_upstream Upgrade websocket
+    header_upstream Host irc-ws-r.chat.twitch.tv
+    insecure_skip_verify
+    }
+}
+
+https://vod-storyboards.twitch.tv:3092 {
+tls steamcommunity.crt steamcommunity.key
+    proxy / https://dlifex0fg7ru9.cloudfront.net {
+    transparent
+    header_upstream Host {host}
+    insecure_skip_verify
+    }
+}
+
+https://vod-metro.twitch.tv:3092 {
+tls steamcommunity.crt steamcommunity.key
+    proxy / https://d8t045al7vai0.cloudfront.net {
+    transparent
+    header_upstream Host {host}
+    insecure_skip_verify
+    }
+}
+
+
+https://music.twitch.tv:3092 {
+tls steamcommunity.crt steamcommunity.key
+    proxy / https://d12b3e89c9703p.cloudfront.net {
+    transparent
+    header_upstream Host {host}
+    insecure_skip_verify
+    }
+}
+
+https://player.m7g.twitch.tv:3092 {
+tls steamcommunity.crt steamcommunity.key
+    proxy / https://dnjmu7cm5xw9w.cloudfront.net {
+    transparent
+    header_upstream Host {host}
+    insecure_skip_verify
+    }
+}
+
+https://badges.twitch.tv:3092 {
+tls steamcommunity.crt steamcommunity.key
+    proxy / https://dbc180c27b3635f9e5b006f3a037b87e.steam302.xyz {
+    transparent
+    header_upstream Host {host}
+    insecure_skip_verify
+    }
+}
+
+https://blog.twitch.tv:3092 {
+tls steamcommunity.crt steamcommunity.key
+    proxy / https://d1x43om3304ey9.cloudfront.net {
+    transparent
+    header_upstream Host {host}
+    insecure_skip_verify
+    }
+}
+
+https://inspector.twitch.tv:3092 {
+tls steamcommunity.crt steamcommunity.key
+    proxy / https://inspector-prod.us-west-2.elasticbeanstalk.com {
+    transparent
+    header_upstream Host {host}
+    insecure_skip_verify
+    }
+}
+
+https://stream.twitch.tv:3092 {
+tls steamcommunity.crt steamcommunity.key
+    proxy / https://dhh9xuj2tu7k9.cloudfront.net {
+    transparent
+    header_upstream Host {host}
+    insecure_skip_verify
+    }
+}
+
+
+https://dev.twitch.tv:3092 {
+tls steamcommunity.crt steamcommunity.key
+    proxy / https://d205b01qzi0xib.cloudfront.net {
+    transparent
+    header_upstream Host {host}
+    insecure_skip_verify
+    }
+}
+
+
+
+#notwork
+https://spade.twitch.tv:3092 {
+tls steamcommunity.crt steamcommunity.key
+    proxy / https://6d7b94f6a3142075c6e14f949daff580.steam302.xyz {
+    transparent
+    header_upstream Host {host}
+    insecure_skip_verify
+    }
+}
+
+
+
+https://vod-secure.twitch.tv:3092 {
+tls steamcommunity.crt steamcommunity.key
+    proxy / https://ds0h3roq6wcgc.cloudfront.net {
+    transparent
+    header_upstream Host {host}
+    insecure_skip_verify
+    }
+}
+
+#notwork
+https://trowel.twitch.tv:3092 {
+tls steamcommunity.crt steamcommunity.key
+    proxy / https://e320c9db4f90dd219ab379f6a5e50dbd.steam302.xyz {
+    transparent
+    header_upstream Host {host}
+    insecure_skip_verify
+    }
+}
+
+https://countess.twitch.tv:3092 {
+tls steamcommunity.crt steamcommunity.key
+    proxy / https://a22ea2da0e1c896a46c16a51f3eb16f4.steam302.xyz {
+    transparent
+    header_upstream Host {host}
+    insecure_skip_verify
+    }
+}
+
+https://extension-files.twitch.tv:3092 {
+tls steamcommunity.crt steamcommunity.key
+    proxy / https://d36mepituis1gg.cloudfront.net {
+    transparent
+    header_upstream Host extension-files.twitch.tv
+    insecure_skip_verify
+    }
+}
+
+
+https://help.twitch.tv:3092 {
+tls steamcommunity.crt steamcommunity.key
+    proxy / https://apply.cisabroad.com {
+    transparent
+    header_upstream Host {host}
+    insecure_skip_verify
+    }
+}
+
+https://brand.twitch.tv:3092 {
+tls steamcommunity.crt steamcommunity.key
+    proxy / https://d2g064yykcu7rs.cloudfront.net {
+    transparent
+    header_upstream Host {host}
+    insecure_skip_verify
+    }
+}
+
+https://assets.help.twitch.tv:3092 {
+tls steamcommunity.crt steamcommunity.key
+    proxy / https://ashelpttv.steam302.xyz {
+    transparent
+    header_upstream Host ashelpttv.steam302.xyz
+    insecure_skip_verify
+    }
+}
+
+
+https://passport.twitch.tv:3092 {
+tls steamcommunity.crt steamcommunity.key
+    proxy / https://c3ad68a16f66bff24e2d82595bd240a1.steam302.xyz {
+    transparent
+    header_upstream Host {host}
+    insecure_skip_verify
+    }
+}
+
+https://id.twitch.tv:3092 {
+tls steamcommunity.crt steamcommunity.key
+    proxy / https://2973c6ca0e111662ed293b57dbae9fbf.steam302.xyz {
+    transparent
+    header_upstream Host {host}
+    insecure_skip_verify
+    }
+}
+
+#notwork
+#https://link.twitch.tv:3092 {
+#tls steamcommunity.crt steamcommunity.key
+#    proxy / https://985a89155dd090eacda1b82388e334ed.steam302.xyz {
+#    transparent
+#    header_upstream Host {host}
+#    insecure_skip_verify
+#    }
+#}
+
+
+https://id-cdn.twitch.tv:3092 {
+tls steamcommunity.crt steamcommunity.key
+    proxy / https://idcdnttv.steam302.xyz {
+    transparent
+    header_upstream Host idcdnttv.steam302.xyz
+    insecure_skip_verify
+    }
+}
+
+https://player.twitch.tv:3092 {
+tls steamcommunity.crt steamcommunity.key
+    proxy / https://1d23669ea58a590fd66d9204d4301563.steam302.xyz {
+    transparent
+    header_upstream Host {host}
+    insecure_skip_verify
+    }
+}
+
+https://api.twitch.tv:3092 {
+tls steamcommunity.crt steamcommunity.key
+    proxy / https://twitch.map.fastly.net {
+    transparent
+    header_upstream Host {host}
+    insecure_skip_verify
+    }
+}
+
+https://cvp.twitch.tv:3092 {
+tls steamcommunity.crt steamcommunity.key
+    proxy / https://e9221.i.akamaiedge.net {
+    transparent
+    header_upstream Host {host}
+    insecure_skip_verify
+    }
+}
+
+#notwork
+#https://clips-media-assets2.twitch.tv:3092 {
+#tls steamcommunity.crt steamcommunity.key
+#    proxy / https://d2xmjdvx03ij56.cloudfront.net {
+#    transparent
+#    header_upstream Host {host}
+#    insecure_skip_verify
+#    }
+#}
+
+
+https://gds-vhs-drops-campaign-images.twitch.tv:3092 {
+tls steamcommunity.crt steamcommunity.key
+    proxy / https://d21oyt3pkiffdb.cloudfront.net {
+    transparent
+    header_upstream Host {host}
+    insecure_skip_verify
+    }
+}
+
+https://us-west-2.uploads-regional.twitch.tv:3092 {
+tls steamcommunity.crt steamcommunity.key
+    proxy / https://2f16aa2ed3889461cd1076540300a6b3.steam302.xyz {
+    transparent
+    header_upstream Host {host}
+    insecure_skip_verify
+    }
+}
+
+#notwork
+#https://assets.help.twitch.tv:3092 {
+#tls steamcommunity.crt steamcommunity.key
+#    proxy / https://6d859be7aa0440f65c8a940ef5218337.steam302.xyz {
+#    transparent
+#    header_upstream Host {host}
+#    insecure_skip_verify
+#    }
+#}
+
+https://discuss.dev.twitch.tv:3092 {
+tls steamcommunity.crt steamcommunity.key
+    proxy / https://522c432cc10e237a02fa1d6481d7d247.steam302.xyz {
+    transparent
+    header_upstream Host {host}
+    insecure_skip_verify
+    }
+}
+
+https://safety.twitch.tv:3092 {
+tls steamcommunity.crt steamcommunity.key
+    proxy / https://accessibility.acapqa.net {
+    transparent
+    header_upstream Host {host}
+    insecure_skip_verify
+    }
+}
+
+https://ingest.twitch.tv:3092 {
+tls steamcommunity.crt steamcommunity.key
+    proxy / https://b3d696173d52b66e1caab6145cb5058b.steam302.xyz {
+    transparent
+    header_upstream Host {host}
+    insecure_skip_verify
+    }
+}
+
+https://usher.ttvnw.net:3092 {
+tls steamcommunity.crt steamcommunity.key
+    proxy / http://usher.steam302.xyz {
+    transparent
+    header_upstream Host {host}
+    insecure_skip_verify
+    header_upstream -X-Forwarded-For
+    header_downstream -X-Forwarded-For
+    header_upstream -X-Real-IP
+    header_downstream -X-Real-IP
+    }
+}
+
+https://steamcdn-a.akamaihd.net:3092  https://cdn.akamai.steamstatic.com:3092 {
+#tls self_signed
+tls steamcommunity.crt steamcommunity.key
+    # default/catchall
+    proxy / https://steamuserimages-a.akamaihd.net https://steamstore-a.akamaihd.net https://steamcommunity-a.akamaihd.net https://steampipe.akamaized.net https://eaassets-a.akamaihd.net https://humblebundle-a.akamaihd.net https://steamcommunity-a.akamaihd.net {
+    policy random
+    fail_timeout 5s
+    timeout 30s
+    transparent
+    header_upstream Host steamcdn-a.akamaihd.net
+    #insecure_skip_verify
+    }
+}
+https://origin-a.akamaihd.net:3092 {
+#tls self_signed
+tls steamcommunity.crt steamcommunity.key
+    # default/catchall
+    proxy / http://cctv4-lh.akamaihd.net http://moviesok-i.akamaihd.net http://vluki-a.akamaihd.net http://hgtv-i.akamaihd.net http://toots-a.akamaihd.net {
+    policy random
+    fail_timeout 0s
+    timeout 3s
+    #transparent
+    header_upstream Host origin-a.akamaihd.net
+    header_upstream -X-Forwarded-For
+    header_downstream -X-Forwarded-For
+    }
+}
+
+https://static3.cdn.ubi.com:3092 {
+#tls self_signed
+tls steamcommunity.crt steamcommunity.key
+    # default/catchall
+    proxy / https://static.cdn.ubi.com {
+    fail_timeout 5s
+    timeout 30s
+    transparent
+    header_upstream Host static3.cdn.ubi.com
+    insecure_skip_verify
+    }
+}
+
+https://www.google.com:3092/recaptcha {
+#tls self_signed
+tls steamcommunity.crt steamcommunity.key
+    redir / https://www.recaptcha.net{uri}
+}
+
+https://www.google.com:3092 {
+#tls self_signed
+tls steamcommunity.crt steamcommunity.key
+    proxy / https://google.com {
+    fail_timeout 5s
+    timeout 30s
+    transparent
+    header_upstream Host www.google.com
+    }
+}
+
+https://steam-chat.com:3092 {
+#tls self_signed
+tls steamcommunity.crt steamcommunity.key
+    # default/catchall
+    proxy / https://steamuserimages-a.akamaihd.net https://steamstore-a.akamaihd.net https://steamcommunity-a.akamaihd.net https://eaassets-a.akamaihd.net https://humblebundle-a.akamaihd.net https://steamcommunity-a.akamaihd.net {
+    policy random
+    fail_timeout 5s
+    timeout 30s
+    transparent
+    header_upstream Host steam-chat.com
+    #insecure_skip_verify
+    }
+}
+
+https://hb.imgix.net:3092 https://fanatical.imgix.net:3092 {
+#tls self_signed
+tls steamcommunity.crt steamcommunity.key
+    # default/catchall
+    proxy / https://imgix.map.fastly.net {
+    policy random
+    fail_timeout 5s
+    timeout 30s
+    transparent
+    header_upstream Host {host}
+    insecure_skip_verify
+    }
+}
+
+https://mod.io:3092 https://*.mod.io:3092 {
+tls steamcommunity.crt steamcommunity.key
+rewrite {
+  to /302{host}{uri}
+}
+    proxy / https://m0di0.steam302.xyz {
+    transparent
+    header_upstream Host m0di0.steam302.xyz
+    insecure_skip_verify
+    }
+}
+
+https://gist.github.com:3092 {
+#tls self_signed
+tls steamcommunity.crt steamcommunity.key
+    # default/catchall
+    proxy / https://ghgist.steam302.xyz {
+    policy random
+    fail_timeout 5s
+    timeout 30s
+    transparent
+    header_upstream Host {host}
+    insecure_skip_verify
+    }
+}
+
+https://api.github.com:3092 {
+#tls self_signed
+tls steamcommunity.crt steamcommunity.key
+    # default/catchall
+    proxy / https://ghapi.steam302.xyz {
+    policy random
+    fail_timeout 5s
+    timeout 30s
+    transparent
+    header_upstream Host {host}
+    insecure_skip_verify
+    }
+}
+
+https://github.com:3092 https://www.github.com:3092 {
+#tls self_signed
+tls steamcommunity.crt steamcommunity.key
+    # default/catchall
+    proxy / https://gh.steam302.xyz {
+    policy random
+    fail_timeout 5s
+    timeout 30s
+    transparent
+    header_upstream Host {host}
+    insecure_skip_verify
+    }
+}
+
+https://raw.githubusercontent.com:3092 https://raw.github.com:3092 https://camo.githubusercontent.com:3092 https://cloud.githubusercontent.com:3092 https://avatars.githubusercontent.com:3092 https://avatars0.githubusercontent.com:3092 https://avatars1.githubusercontent.com:3092 https://avatars2.githubusercontent.com:3092 https://avatars3.githubusercontent.com:3092 https://user-images.githubusercontent.com:3092 https://github-releases.githubusercontent.com:3092 {
+#tls self_signed
+tls steamcommunity.crt steamcommunity.key
+    # default/catchall
+    proxy / https://ghraw.steam302.xyz {
+    policy random
+    fail_timeout 5s
+    timeout 30s
+    transparent
+    header_upstream Host {host}
+    insecure_skip_verify
+    }
+}
+
+https://assets-cdn.github.com:3092 {
+#tls self_signed
+tls steamcommunity.crt steamcommunity.key
+    # default/catchall
+    proxy / https://ghassets.steam302.xyz {
+    policy random
+    fail_timeout 5s
+    timeout 30s
+    transparent
+    header_upstream Host {host}
+    insecure_skip_verify
+    }
+}
+
+https://github.githubassets.com:3092 https://help.github.com:3092 https://docs.github.com:3092 {
+#tls self_signed
+tls steamcommunity.crt steamcommunity.key
+    # default/catchall
+    proxy / https://gh154.steam302.xyz {
+    policy random
+    fail_timeout 5s
+    timeout 30s
+    transparent
+    header_upstream Host {host}
+    insecure_skip_verify
+    }
+}
+
+https://codeload.github.com:3092 {
+#tls self_signed
+tls steamcommunity.crt steamcommunity.key
+    # default/catchall
+    proxy / https://ghcload.steam302.xyz {
+    policy random
+    fail_timeout 5s
+    timeout 30s
+    transparent
+    header_upstream Host {host}
+    insecure_skip_verify
+    }
+}
+
+
+https://*.github.io:3092 https://www.github.io:3092 https://github.io:3092 {
+#tls self_signed
+tls steamcommunity.crt steamcommunity.key
+    # default/catchall
+    proxy / https://ghio.steam302.xyz {
+    policy random
+    fail_timeout 5s
+    timeout 30s
+    transparent
+    header_upstream Host {host}
+    insecure_skip_verify
+    }
+}
+
+https://pages.github.com:3092 {
+#tls self_signed
+tls steamcommunity.crt steamcommunity.key
+    # default/catchall
+    proxy / https://ghps.steam302.xyz {
+    policy random
+    fail_timeout 5s
+    timeout 30s
+    transparent
+    header_upstream Host {host}
+    insecure_skip_verify
+    }
+}
+
+https://services.github.com:3092 https://resources.github.com:3092 https://developer.github.com:3092 https://partner.github.com:3092 https://desktop.github.com:3092 https://guides.github.com:3092 {
+#tls self_signed
+tls steamcommunity.crt steamcommunity.key
+    # default/catchall
+    proxy / https://ghps.steam302.xyz {
+    policy random
+    fail_timeout 5s
+    timeout 30s
+    transparent
+    header_upstream Host {host}
+    insecure_skip_verify
+    }
+}
+
+https://support.github.com:3092 https://education.github.com:3092 https://enterprise.github.com:3092 https://lab.github.com:3092 https://classroom.github.com:3092 https://central.github.com:3092 {
+#tls self_signed
+tls steamcommunity.crt steamcommunity.key
+    # default/catchall
+    proxy / https://gh140.steam302.xyz {
+    policy random
+    fail_timeout 5s
+    timeout 30s
+    transparent
+    header_upstream Host {host}
+    insecure_skip_verify
+    }
+}
+
+https://desktop.githubusercontent.com:3092 {
+#tls self_signed
+tls steamcommunity.crt steamcommunity.key
+    # default/catchall
+    proxy / https://ghdesk.steam302.xyz {
+    policy random
+    fail_timeout 5s
+    timeout 30s
+    transparent
+    header_upstream Host {host}
+    insecure_skip_verify
+    }
+}
+
+https://images-eds.xboxlive.com:3092 {
+#tls self_signed
+tls steamcommunity.crt steamcommunity.key
+    # default/catchall
+    proxy / https://steamuserimages-a.akamaihd.net https://steamstore-a.akamaihd.net https://steamcommunity-a.akamaihd.net https://eaassets-a.akamaihd.net https://humblebundle-a.akamaihd.net https://steamcommunity-a.akamaihd.net {
+    policy random
+    fail_timeout 5s
+    timeout 30s
+    transparent
+    header_upstream Host images-eds.xboxlive.com
+    #insecure_skip_verify
+    }
+}
+
+https://store-images.s-microsoft.com:3092 {
+#tls self_signed
+tls steamcommunity.crt steamcommunity.key
+    # default/catchall
+    proxy / https://store-images.microsoft.com {
+    policy random
+    fail_timeout 5s
+    timeout 30s
+    transparent
+    header_upstream Host store-images.s-microsoft.com
+    #insecure_skip_verify
+    }
+}
+
+https://api1.origin.com:3092 {
+tls steamcommunity.crt steamcommunity.key
+rewrite {
+  if {uri} not_has "cdnOverride"
+  if {path} starts_with "/ecommerce2/downloadURL"
+  to {uri}&cdnOverride=akamai
+}
+
+proxy / https://api2.origin.com/ {
+    transparent
+    header_upstream Host api1.origin.com
+    #insecure_skip_verify
+    }
+}
+
+https://onedrive.live.com:3092 {
+tls steamcommunity.crt steamcommunity.key
+    proxy / https://13.107.42.13 {
+    transparent
+    header_upstream Host onedrive.live.com
+    insecure_skip_verify
+    }
+}
+https://skyapi.onedrive.live.com:3092 {
+tls steamcommunity.crt steamcommunity.key
+    proxy / https://131.253.14.227 https://131.253.14.229 https://40.90.136.179 https://13.105.28.48 https://40.90.136.180 https://157.55.109.228 https://40.90.136.163 https://131.253.14.230 https://40.90.128.17 https://40.90.142.226 https://13.105.28.32 https://104.44.88.24 https://40.90.133.97 https://13.104.208.162 https://157.55.109.230 https://13.104.208.160 https://13.105.28.1 https://104.44.88.28 https://157.55.109.232 https://40.90.133.112 https://40.79.207.82 https://40.90.136.20 {
+    policy random
+    fail_timeout 5s
+    timeout 30s
+    transparent
+    header_upstream Host skyapi.onedrive.live.com
+    insecure_skip_verify
+    }
+}
+
